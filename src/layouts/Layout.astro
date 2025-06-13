@@ -11,16 +11,51 @@ import "./src/styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Javier Lorenzo Blog</title>
   </head>
-  <body>
-	<img class="w-full h-full" src="/src/assets/background-image.png" alt="" fetchpriority="high" />
-    <slot>
-    </slot>
+  <body class="min-h-screen flex flex-col">
+    <img class="absolute inset-0 -z-10 w-full h-full object-cover" src="/src/assets/background-image2.png" fetchpriority="high"/>
+    <nav class="group flex gap-40 justify-center py-10 text-white text-lg border-b">
+      <a href="#" class="px-4 py-2 rounded transition duration-200 hover:bg-gray-100/50">HOME</a>
+      <a href="#" class="px-4 py-2 rounded transition duration-200 hover:bg-gray-100/50">SOBRE MÍ</a>
+	  <a href="#" class="px-4 py-2 rounded transition duration-200 hover:bg-gray-100/50">CURRÍCULO</a>
+      <a href="#" class="px-4 py-2 rounded transition duration-200 hover:bg-gray-100/50">ARTÍCULOS</a>
+      <a href="#" class="px-4 py-2 rounded transition duration-200 hover:bg-gray-100/50">CONTACTO</a>
+      <a href="#" class="px-4 py-2 rounded transition duration-200 hover:bg-gray-100/50">SUSCRIPCIÓN</a>
+    </nav>
+	<div class="flex flex-1">
+		<aside class="w-100 p-4 bg-black/50 text-white">
+			<nav class="flex flex-col gap-4">
+				<br/>
+				<p class="text-4xl font-bold text-center">Javier Lorenzo Carrión</p>
+				<p class="font-bold text-center">Junior backend developer <br/> Consultor financiero</p>
+				<div class="flex flex-row gap-5 justify-center">
+					<a href="www.linkedin.com/in/javier-lorenzo-carrión-758253109"><img src="/src/assets/logo-linkedin.png" class="bg-transparent" width="26" height="26"/></a>
+					<a href="https://github.com/Javier-Lorenzo-Carrion"><img src="/src/assets/logo-github.png" class="bg-transparent" width="30" height="30"/></a>
+					<a href="https://www.getmanfred.com/perfil/efbdd7dd-d6b6-49c4-96de-eb01bad6f2cb"><img src="/src/assets/logo-manfred.png" class="bg-transparent" width="26" height="26"/></a>
+				</div>
+				<img src="/src/assets/profile-image.png" class="w-full h-auto object-contain bg-transparent m-0 p-0"/>
+				<br/>
+				<p class="text-2xl font-bold text-center">Resumen profesional</p>
+			  	<p class="text-justify">Desarrollador backend con una incipiente carrera profesional y un año de experiencia en el sector del desarrollo de software. Por otra parte, consultor financiero con 9 años de experiencia en el sector de la consultoría de empresas.</p>
+				<p class="text-center italic text-gray-400">¡Siempre en búsqueda de nuevos y excitantes proyectos!</p>
+			</nav>
+		</aside>
+		<main class="flex-1 p-6">
+			<slot/>
+		</main>
+	</div>
+	<footer class="group flex gap-40 justify-center py-5 text-white text-l border-t">
+		<a href="/" class="px-4 py-2 rounded transition duration-200 hover:bg-gray-100/50">Aviso legal</a>
+		<a href="/" class="px-4 py-2 rounded transition duration-200 hover:bg-gray-100/50">Términos y condiciones de uso</a>
+		<a href="/" class="px-4 py-2 rounded transition duration-200 hover:bg-gray-100/50">Política de privacidad</a>
+		<a href="/" class="px-4 py-2 rounded transition duration-200 hover:bg-gray-100/50">Copyright</a>
+	  </footer>
   </body>
 </html>
 
 <style>
   html,
   body {
+	color: black;
     margin: 0;
     width: 100%;
     height: 100%;
